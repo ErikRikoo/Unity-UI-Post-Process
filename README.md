@@ -1,9 +1,11 @@
-﻿# Text Position Randomizer - Unity
-_A utility script to randomize character position in Text Mesh Pro_
+﻿# UI Post Process - Unity
+_A utility tool to apply postprocessing to world ui_
 
 ## Motivation
-THis is a utility script needed for a [game](https://www.deadsigns.fr/) I work on with a team.
-We need some hand-written font so to add more variety and authenticity I wrote that asset.
+This is a utility tool needed for a [game](https://www.deadsigns.fr/) I work on with a team.
+We needed some cool old tv effect on a world space canvas.
+You can find the shader [there](https://github.com/ErikRikoo/Dead-Signs-Shaders).
+
 ## Installation
 To install this package you can do one of this:
 - Using Package Manager Window
@@ -52,11 +54,37 @@ follow this steps:
 - Package should be updated
 
 ## How does it work
+- Just drop the prefab in the Prefabs folder into you scene.
+- Give it a post process material
+- And then tweak the parameters
 
+### Parameters
+- **Settings**:
+    - **Background Color**
+    - **Dimension**
+    - **Pixel Density**
+    - **Scale**
+    - **Post Process Material**
+- **Components**: Just don't touch it if it comes from the prefab
+
+### Creating canvas elements using *Editor Tools*
+To add canvas elements to the canvas in the prefab, you should not do it directly.
+Unity will try to keep the UI element at the same place in the scene so it will 
+change position, rotation, scale and everything.
+You should go under _Editor Tools_ and then drop an object into the object field.
+It needs to be an object from the scene and not a child of the UI Post Process.
+
+There is something else to note is that you should use relative positions for your UI elements
+(anchors and so on). If it is not the case, just tick the check box and it will compute
+directly the anchors for you.
+
+Finally to move the object just press the button.
 
 ## TODO
-Nothing yet, but fell free to suggest !
+- [ ] Applying multiple post process shaders
+- [ ] Remove the dependency to a material instance
 
+ 
 ## Known issue
 - When you do an "Export Package" action, the render texture is kind of discarded and you
 will just have the post process applied on a completely white texture.
