@@ -1,0 +1,9 @@
+{
+  "name": "com.rikoo.ui-post-process",
+  "displayName": "UI Post Process",
+  "version": "1.0.0",
+  "description": "This package allows you to run post processing on a world space UI",
+  "keywords": [
+    "utility"
+  ]
+}
