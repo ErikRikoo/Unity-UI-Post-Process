@@ -1,3 +1,4 @@
+using System;
 using UI.PostProcess.Scripts.Utilities;
 using UnityEditor;
 using UnityEngine;
@@ -37,7 +38,12 @@ namespace UIPostProcess.Runtime
         );
     
         public float Ratio => m_Dimension.x / m_Dimension.y;
-    
+
+        private void Awake()
+        {
+            ApplyProperties();
+        }
+
         private void OnValidate()
         {
             ApplyProperties();
